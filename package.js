@@ -2,10 +2,16 @@
 
 Package.describe({
   summary: 'Meteor sign up and sign in templates core package.',
-  version: '1.14.2_1',
+  version: '1.14.2_2',
   name: 'useraccounts:core',
   git: 'https://github.com/meteor-useraccounts/core.git',
 });
+
+
+// Npm.depends({
+//   'meteor-accounts-t9n' : '2.3.1'
+// });
+
 
 Package.onUse(function(api) {
   api.versionsFrom('METEOR@1.0.3');
@@ -30,7 +36,7 @@ Package.onUse(function(api) {
 
   api.imply([
     'accounts-base',
-    'softwarerero:accounts-t9n',
+    'softwarerero:accounts-t9n@2.1.0',
   ], ['client', 'server']);
 
   api.imply([
