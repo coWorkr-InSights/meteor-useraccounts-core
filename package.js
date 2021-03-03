@@ -14,7 +14,7 @@ Package.describe({
 
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@1.0.3');
+  //api.versionsFrom('METEOR@1.0.3');
 
   api.use([
     'accounts-base',
