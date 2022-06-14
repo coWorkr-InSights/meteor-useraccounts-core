@@ -2,9 +2,13 @@
 
 Package.describe({
   summary: 'Meteor sign up and sign in templates core package.',
-  version: '1.15.0_1',
+  version: '1.16.2_1',
   name: 'useraccounts:core',
   git: 'https://github.com/meteor-compat/useraccounts-core',
+});
+
+Npm.depends({
+  "meteor-accounts-t9n": "2.6.0",
 });
 
 Package.onUse(function(api) {
@@ -15,13 +19,14 @@ Package.onUse(function(api) {
     'check',
     'underscore',
     'reactive-var',
+    'ecmascript',
   ], ['client', 'server']);
 
   api.use([
     'blaze@2.5.0',
     'reactive-dict',
     'templating@1.4.1',
-    'jquery@3.0.0'
+    'jquery@1.11.9||3.0.0'
   ], 'client');
 
   api.use([
@@ -30,7 +35,6 @@ Package.onUse(function(api) {
 
   api.imply([
     'accounts-base',
-    'softwarerero:accounts-t9n',
   ], ['client', 'server']);
 
   api.imply([
@@ -43,6 +47,7 @@ Package.onUse(function(api) {
     'lib/server.js',
     'lib/methods.js',
     'lib/server_methods.js',
+    'lib/T9n.js',
   ], ['server']);
 
   api.addFiles([
@@ -71,10 +76,11 @@ Package.onUse(function(api) {
     'lib/templates_helpers/ensure_signed_in.html',
     'lib/templates_helpers/ensure_signed_in.js',
     'lib/methods.js',
+    'lib/T9n.js',
   ], ['client']);
 
   api.export([
-    'AccountsTemplates',
+    'AccountsTemplates', 'T9n'
   ], ['client', 'server']);
 });
 
